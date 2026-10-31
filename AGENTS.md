@@ -19,7 +19,7 @@ The owner reviews when they have time and publishes from Buffer by hand. You nev
 ## Context: read before every run
 
 1. `BRAND-social.md`: voice, product facts, what we can and cannot claim, visual identity, photo rules. It overrides your own ideas.
-2. `MEMORY.md`: rules learned from the owner's feedback. They override this file's content rules where they conflict.
+2. `MEMORY.md`: rules learned from the owner's feedback. They override everything in this file and the templates' defaults (timing, text length, layout). Only the claims table in `BRAND-social.md` (§6) overrides MEMORY.md.
 3. The last 7 `drafts/*/post.md` files, so you don't repeat a topic, hook or photo.
 
 ## Daily run
@@ -34,7 +34,7 @@ Work from the repo root. Today's date is `TZ=Europe/Warsaw date +%F`; call it `<
 3. **Format.** Rotate in this order: `reel` → `animated-carousel` → `static-carousel` → `reel` … Take the format of the newest `drafts/*/format.txt` and use the next one. With no drafts yet, start with `reel`.
 4. **Topic and copy.** Choose one idea the last 7 drafts didn't use: a model, a detail (wood, felt, ears, legs, the removable front), a room or interior style, life with a pet. Write the slide text and caption in Polish following BRAND-social.md §3 (social posts: ~20% product, ~20% interior, ~60% quirk; the hook is the joke, the fact backs it up). Reuse lines from the copy bank (§7) when they fit.
 5. **Build.** `bash scripts/new-draft.sh <date> <format>`, then edit `drafts/<date>/project/index.html`:
-   - Keep the template's structure, sizes, fonts and timing system; change the words, the photos and, if needed, the number of slides or scenes.
+   - Keep the template's structure, sizes, fonts and timing system unless a MEMORY.md rule says otherwise; change the words, the photos and, if needed, the number of slides or scenes.
    - Reference photos as `src="assets/<filename>"`, using file names from `assets/photos/studio/` or `assets/photos/ai-wood/` (the render script copies them in).
    - Static and animated carousels: 1080×1350. Reel: 1080×1920, 12–20 s, keep all text between y=250 and y=1520 (Instagram covers the rest).
    - Read the template's comments and the HyperFrames rules in the project's `CLAUDE.md` if you change animation.
