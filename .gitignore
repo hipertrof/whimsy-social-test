@@ -1,0 +1,5 @@
+.hyperframes/
+node_modules/
+drafts/*/project/assets/
+drafts/*/project/fonts/
+drafts/*/project/gsap.min.js

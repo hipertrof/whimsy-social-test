@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1350" />
+    <script src="gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Gloock"; src: url("fonts/Gloock-Regular.ttf"); }
+      @font-face { font-family: "Lato"; src: url("fonts/Lato-Regular.ttf"); font-weight: 400; }
+      @font-face { font-family: "Lato"; src: url("fonts/Lato-Bold.ttf"); font-weight: 700; }
+      @font-face { font-family: "Quicksand"; src: url("fonts/Quicksand-VF.ttf"); font-weight: 300 700; }
+      :root {
+        --midnight: #0b1726;
+        --slate: #2a3e59;
+        --felt: #bfbfba;
+        --ash: #d9c49c;
+        --oak: #a6845b;
+        --paper: #f2efe8;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1350px; overflow: hidden; background: var(--midnight); }
+      #root { position: relative; width: 100%; height: 100%; }
+      .slide { position: absolute; inset: 0; overflow: hidden; font-family: "Lato", sans-serif; }
+      .light { background: var(--felt); color: var(--midnight); }
+      .dark { background: var(--midnight); color: var(--paper); }
+      .pad { position: absolute; left: 84px; right: 84px; }
+      .wordmark { font-family: "Gloock", serif; font-size: 44px; }
+      .label { font-family: "Quicksand", sans-serif; font-weight: 600; font-size: 26px; letter-spacing: 0.18em; text-transform: uppercase; }
+      .dark .label { color: var(--ash); }
+      .light .label { color: var(--slate); }
+      .top { top: 84px; display: flex; justify-content: space-between; align-items: baseline; }
+      h1 { font-family: "Gloock", serif; font-weight: 400; line-height: 1.05; letter-spacing: -0.015em; }
+      p { font-size: 36px; line-height: 1.45; }
+      .line { display: block; }
+      .mask { overflow: hidden; display: block; padding-bottom: 8px; }
+      .photo { position: absolute; overflow: hidden; }
+      .photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+      /* 1 — hook */
+      #a1 h1 { top: 200px; font-size: 72px; }
+      #a1 .accent { color: var(--slate); }
+      #a1 .photo { left: 84px; right: 84px; bottom: 150px; height: 620px; border-radius: 28px; background: #fff; }
+      #a1 .swipe { bottom: 72px; text-align: right; font-family: "Quicksand", sans-serif; font-weight: 600; font-size: 28px; color: var(--slate); letter-spacing: 0.08em; }
+
+      /* 2, 3 — detail close-ups */
+      .detail .photo { left: 0; right: 0; top: 0; height: 880px; }
+      .detail .shade { position: absolute; left: 0; right: 0; top: 640px; height: 240px; background: linear-gradient(to bottom, rgba(11,23,38,0), var(--midnight)); }
+      .detail .text { top: 900px; display: flex; flex-direction: column; gap: 22px; }
+      .detail h1 { font-size: 76px; }
+      .detail p { color: #d6d3cc; }
+      .detail .tag { top: 84px; text-align: right; }
+      .detail .tag span { background: rgba(11,23,38,0.72); color: var(--ash); padding: 12px 20px; border-radius: 40px; }
+
+      /* 4 — close */
+      #a4 .photo { left: 84px; right: 84px; top: 190px; height: 560px; border-radius: 28px; }
+      #a4 h1 { top: 800px; font-size: 92px; }
+      #a4 p { top: 930px; color: #d6d3cc; }
+      #a4 .foot { bottom: 84px; display: flex; justify-content: space-between; align-items: baseline; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="24" data-width="1080" data-height="1350">
+
+      <section id="a1" class="slide light clip" data-start="0" data-duration="6" data-track-index="0">
+        <div class="pad top"><span class="wordmark">whimsy .</span><span class="label">Frodo</span></div>
+        <h1 class="pad">
+          <span class="mask"><span id="a1-l1" class="line">Forma podąża za funkcją.</span></span>
+          <span class="mask"><span id="a1-l2" class="line accent">Funkcja podąża za drzemką.</span></span>
+        </h1>
+        <div id="a1-photo" class="photo"><img id="a1-img" src="assets/frodo-gray-01.jpg" alt="" /></div>
+        <div id="a1-swipe" class="pad swipe">przesuń →</div>
+      </section>
+
+      <section id="a2" class="slide dark detail clip" data-start="6" data-duration="6" data-track-index="0">
+        <div class="photo"><img id="a2-img" src="assets/frodo-gray-06.jpg" alt="" /></div>
+        <div class="shade"></div>
+        <div class="pad tag label"><span>Lite drewno · 20 mm</span></div>
+        <div class="pad text">
+          <div id="a2-label" class="label">Dąb lub jesion</div>
+          <h1><span class="mask"><span id="a2-h" class="line">Każdy ma własne usłojenie.</span></span></h1>
+          <p id="a2-p">Szlifowane ręcznie, z powłokami bezpiecznymi dla zwierząt. Kot i tak powie, że to jego zasługa.</p>
+        </div>
+      </section>
+
+      <section id="a3" class="slide dark detail clip" data-start="12" data-duration="6" data-track-index="0">
+        <div class="photo"><img id="a3-img" src="assets/barney-gray-12.jpg" alt="" /></div>
+        <div class="shade"></div>
+        <div class="pad tag label"><span>Gruby filc · 4 mm</span></div>
+        <div class="pad text">
+          <div id="a3-label" class="label">Wyciszający</div>
+          <h1><span class="mask"><span id="a3-h" class="line">Drzemka bez przerw.</span></span></h1>
+          <p id="a3-p">Bo drzemka to jedyna rzecz, której nie powinno się przerywać. Nigdy.</p>
+        </div>
+      </section>
+
+      <section id="a4" class="slide dark clip" data-start="18" data-duration="6" data-track-index="0">
+        <div class="pad top"><span class="wordmark">whimsy .</span><span class="label">Ręcznie w Polsce</span></div>
+        <div id="a4-photo" class="photo"><img id="a4-img" src="assets/barney-blue-03.png" alt="" /></div>
+        <h1 class="pad"><span class="mask"><span id="a4-h" class="line">Przyjeżdża w całości.</span></span></h1>
+        <p id="a4-p" class="pad">Jedyne, co składasz w ten weekend, to propozycję drzemki swojemu pupilowi.</p>
+        <div id="a4-foot" class="pad foot"><span class="label">whimsyshelters.pl</span><span class="label">Barney · Tivi · Frodo</span></div>
+      </section>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const rise = (sel, t) => tl.fromTo(sel, { yPercent: 105 }, { yPercent: 0, duration: 0.8, ease: "power3.out" }, t);
+      const fade = (sel, t, y = 24) => tl.fromTo(sel, { opacity: 0, y }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, t);
+
+      // 1 — hook
+      rise("#a1-l1", 0.3);
+      rise("#a1-l2", 1.4);
+      tl.fromTo("#a1-photo", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 1.0, ease: "power3.out" }, 0.6);
+      tl.fromTo("#a1-img", { scale: 1.08 }, { scale: 1, duration: 5.4, ease: "none" }, 0.6);
+      fade("#a1-swipe", 3.0, 0);
+
+      // 2 — wood
+      tl.fromTo("#a2-img", { scale: 1.0 }, { scale: 1.14, duration: 6, ease: "none" }, 6);
+      fade("#a2-label", 6.3);
+      rise("#a2-h", 6.6);
+      fade("#a2-p", 7.4);
+
+      // 3 — felt
+      tl.fromTo("#a3-img", { scale: 1.14 }, { scale: 1.0, duration: 6, ease: "none" }, 12);
+      fade("#a3-label", 12.3);
+      rise("#a3-h", 12.6);
+      fade("#a3-p", 13.4);
+
+      // 4 — close
+      tl.fromTo("#a4-photo", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" }, 18.2);
+      tl.fromTo("#a4-img", { scale: 1.1 }, { scale: 1, duration: 5.8, ease: "none" }, 18.2);
+      rise("#a4-h", 18.8);
+      fade("#a4-p", 19.6);
+      fade("#a4-foot", 20.4, 0);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
