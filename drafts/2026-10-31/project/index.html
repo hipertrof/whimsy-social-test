@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Gloock"; src: url("fonts/Gloock-Regular.ttf"); }
+      @font-face { font-family: "Lato"; src: url("fonts/Lato-Regular.ttf"); font-weight: 400; }
+      @font-face { font-family: "Lato"; src: url("fonts/Lato-Bold.ttf"); font-weight: 700; }
+      @font-face { font-family: "Quicksand"; src: url("fonts/Quicksand-VF.ttf"); font-weight: 300 700; }
+      :root {
+        --midnight: #0b1726;
+        --slate: #2a3e59;
+        --felt: #bfbfba;
+        --ash: #d9c49c;
+        --oak: #a6845b;
+        --paper: #f2efe8;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--midnight); }
+      #root { position: relative; width: 100%; height: 100%; }
+      .scene { position: absolute; inset: 0; overflow: hidden; font-family: "Lato", sans-serif; }
+      .dark { background: var(--midnight); color: var(--paper); }
+      .light { background: var(--felt); color: var(--midnight); }
+      .pad { position: absolute; left: 84px; right: 84px; }
+      h1 { font-family: "Gloock", serif; font-weight: 400; line-height: 1.05; letter-spacing: -0.015em; }
+      .mask { display: block; overflow: hidden; padding-bottom: 10px; }
+      .line { display: block; }
+      .label { font-family: "Quicksand", sans-serif; font-weight: 600; font-size: 30px; letter-spacing: 0.18em; text-transform: uppercase; }
+      .dark .label { color: var(--ash); }
+      .light .label { color: var(--slate); }
+      .photo { position: absolute; overflow: hidden; }
+      .photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+      /* 1 — hook (Reels UI covers roughly the top 250 px and bottom 400 px) */
+      #r1 h1 { top: 270px; font-size: 84px; }
+      #r1 .photo { left: 0; right: 0; top: 660px; height: 1040px; }
+
+      /* 2 — three models */
+      .model .photo { left: 84px; right: 84px; top: 370px; height: 840px; border-radius: 32px; background: #fff; }
+      .model .label { top: 290px; }
+      .model h1 { top: 1250px; font-size: 110px; }
+      .model .tagline { top: 1395px; font-size: 40px; line-height: 1.3; color: var(--slate); }
+
+      /* 3 — interior */
+      #r3 .photo { left: 0; right: 0; top: 280px; height: 1080px; }
+      #r3 h1 { top: 1400px; font-size: 64px; }
+
+      /* 4 — end card */
+      #r4 .wordmark { top: 640px; text-align: center; font-family: "Gloock", serif; font-size: 170px; }
+      #r4 .sub { top: 900px; text-align: center; font-size: 42px; color: #d6d3cc; }
+      #r4 .rule { top: 1010px; left: 490px; right: 490px; height: 3px; background: var(--oak); }
+      #r4 .models { top: 1070px; text-align: center; }
+      #r4 .url { top: 1140px; text-align: center; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="15" data-width="1080" data-height="1920">
+
+      <section id="r1" class="scene dark clip" data-start="0" data-duration="3.2" data-track-index="0">
+        <div class="photo"><img id="r1-img" src="assets/frodo-gray-03.png" alt="" /></div>
+        <h1 class="pad">
+          <span class="mask"><span id="r1-l1" class="line">Oficjalnie: drzemka.</span></span>
+          <span class="mask"><span id="r1-l2" class="line">Nieoficjalnie:</span></span>
+          <span class="mask"><span id="r1-l3" class="line" style="color: var(--ash)">ochrona obiektu.</span></span>
+        </h1>
+      </section>
+
+      <section id="r2a" class="scene light model clip" data-start="3.2" data-duration="1.6" data-track-index="0">
+        <div class="pad label">Frodo · 1 / 3</div>
+        <div id="r2a-photo" class="photo"><img src="assets/frodo-gray-02.jpg" alt="" /></div>
+        <h1 class="pad"><span class="mask"><span id="r2a-h" class="line">Jedno wejście.</span></span></h1>
+        <div class="pad tagline">Duże i okrągłe, 20 cm średnicy.<br>Wejście i wyjście ewakuacyjne w jednym.</div>
+      </section>
+
+      <section id="r2b" class="scene light model clip" data-start="4.8" data-duration="1.6" data-track-index="0">
+        <div class="pad label">Frodo · 2 / 3</div>
+        <div id="r2b-photo" class="photo"><img src="assets/frodo-gray-08.jpg" alt="" /></div>
+        <h1 class="pad"><span class="mask"><span id="r2b-h" class="line">Dwa okienka.</span></span></h1>
+        <div class="pad tagline">Punkt obserwacyjny<br>z widokiem na kuchnię.</div>
+      </section>
+
+      <section id="r2c" class="scene light model clip" data-start="6.4" data-duration="1.6" data-track-index="0">
+        <div class="pad label">Frodo · 3 / 3</div>
+        <div id="r2c-photo" class="photo"><img src="assets/frodo-gray-13.jpg" alt="" /></div>
+        <h1 class="pad"><span class="mask"><span id="r2c-h" class="line">Gruby filc.</span></span></h1>
+        <div class="pad tagline">Wyciszający, bo ochrona<br>też musi się wyspać.</div>
+      </section>
+
+      <section id="r3" class="scene dark clip" data-start="8" data-duration="3.6" data-track-index="0">
+        <div class="photo"><img id="r3-img" src="assets/frodo-blue-03.png" alt="" /></div>
+        <h1 class="pad">
+          <span class="mask"><span id="r3-l1" class="line">Frodo. Lite drewno i filc.</span></span>
+          <span class="mask"><span id="r3-l2" class="line">Nieoczywisty kształt.</span></span>
+          <span class="mask"><span id="r3-l3" class="line" style="color: var(--ash)">Oczywisty wybór.</span></span>
+        </h1>
+      </section>
+
+      <section id="r4" class="scene dark clip" data-start="11.6" data-duration="3.4" data-track-index="0">
+        <div id="r4-mark" class="pad wordmark">whimsy .</div>
+        <div id="r4-sub" class="pad sub">Ręcznie robione w Polsce</div>
+        <div id="r4-rule" class="pad rule"></div>
+        <div id="r4-models" class="pad label models">Barney · Tivi · Frodo</div>
+        <div id="r4-url" class="pad label url">whimsyshelters.pl</div>
+      </section>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const rise = (sel, t, d = 0.7) => tl.fromTo(sel, { yPercent: 105 }, { yPercent: 0, duration: d, ease: "power3.out" }, t);
+      const fade = (sel, t, y = 20) => tl.fromTo(sel, { opacity: 0, y }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, t);
+
+      // 1 — hook: slow push-in on the interior
+      tl.fromTo("#r1-img", { scale: 1.0 }, { scale: 1.12, duration: 3.2, ease: "none" }, 0);
+      rise("#r1-l1", 0.15);
+      rise("#r1-l2", 0.5);
+      rise("#r1-l3", 0.85);
+
+      // 2 — quick model cuts: card slides in, name rises
+      [["#r2a", 3.2], ["#r2b", 4.8], ["#r2c", 6.4]].forEach(([id, t]) => {
+        tl.fromTo(id + "-photo", { x: 120, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: "power3.out" }, t);
+        rise(id + "-h", t + 0.15, 0.5);
+      });
+
+      // 3 — interior with the punchline
+      tl.fromTo("#r3-img", { scale: 1.12 }, { scale: 1.0, duration: 3.6, ease: "none" }, 8);
+      rise("#r3-l1", 8.3);
+      rise("#r3-l2", 8.65);
+      rise("#r3-l3", 9.0);
+
+      // 4 — end card
+      fade("#r4-mark", 11.75, 30);
+      fade("#r4-sub", 12.2);
+      tl.fromTo("#r4-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power2.out" }, 12.4);
+      fade("#r4-models", 12.6);
+      fade("#r4-url", 12.8);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
