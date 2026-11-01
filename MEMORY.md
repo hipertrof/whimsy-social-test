@@ -4,4 +4,4 @@ Rules learned from the owner's feedback. One rule per line, with a short *Why*. 
 
 ## Rules
 
-(none yet)
+- Every slide or scene stays on screen at least 3 s plus 0.3 s per word on it (headline, body, labels), counted from when its text is fully in. *Why:* viewers need time to read before it moves on.
