@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1350" />
+    <script src="gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Gloock"; src: url("fonts/Gloock-Regular.ttf"); }
+      @font-face { font-family: "Lato"; src: url("fonts/Lato-Regular.ttf"); font-weight: 400; }
+      @font-face { font-family: "Lato"; src: url("fonts/Lato-Bold.ttf"); font-weight: 700; }
+      @font-face { font-family: "Quicksand"; src: url("fonts/Quicksand-VF.ttf"); font-weight: 300 700; }
+      :root {
+        --midnight: #0b1726;
+        --slate: #2a3e59;
+        --felt: #bfbfba;
+        --ash: #d9c49c;
+        --oak: #a6845b;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1350px; overflow: hidden; background: var(--felt); }
+      #root { position: relative; width: 100%; height: 100%; }
+      .slide {
+        position: absolute; inset: 0; padding: 88px 84px;
+        display: flex; flex-direction: column;
+        font-family: "Lato", sans-serif; color: var(--midnight);
+      }
+      .dark { background: var(--midnight); color: #f2efe8; }
+      .light { background: var(--felt); }
+      .top { display: flex; justify-content: space-between; align-items: baseline; }
+      .wordmark { font-family: "Gloock", serif; font-size: 44px; letter-spacing: -0.01em; }
+      .label { font-family: "Quicksand", sans-serif; font-weight: 600; font-size: 26px; letter-spacing: 0.18em; text-transform: uppercase; }
+      .dark .label { color: var(--ash); }
+      .light .label { color: var(--slate); }
+      h1 { font-family: "Gloock", serif; font-weight: 400; line-height: 1.04; letter-spacing: -0.015em; }
+      p { font-size: 34px; line-height: 1.45; }
+      .photo { border-radius: 28px; overflow: hidden; background: #fff; }
+      .photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+      .swipe { font-family: "Quicksand", sans-serif; font-weight: 600; font-size: 28px; color: var(--ash); letter-spacing: 0.08em; }
+
+      /* 1 — cover */
+      #s1 h1 { font-size: 92px; margin-top: 64px; }
+      #s1 .hero { height: 660px; margin-top: auto; }
+      #s1 .bottom { display: flex; justify-content: space-between; margin-top: 44px; font-size: 30px; }
+
+      /* 2–4 — models */
+      .model .photo { height: 760px; margin-top: 44px; }
+      .model h1 { font-size: 78px; margin-top: 48px; }
+      .model p { margin-top: 22px; max-width: 880px; }
+
+      /* 5 — CTA */
+      #s5 h1 { font-size: 96px; margin-top: 110px; }
+      #s5 ul { list-style: none; margin-top: 70px; font-size: 38px; line-height: 1.9; }
+      #s5 ul li::before { content: "—  "; color: var(--oak); }
+      #s5 .ask { margin-top: auto; font-size: 40px; line-height: 1.4; color: var(--ash); }
+      #s5 .ask strong { color: #f2efe8; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="5" data-width="1080" data-height="1350">
+
+      <section id="s1" class="slide dark clip" data-start="0" data-duration="1" data-track-index="0">
+        <div class="top"><span class="wordmark">whimsy .</span><span class="label">Barney Gray</span></div>
+        <h1>Kot przeprowadził<br />inspekcję. Oto raport.</h1>
+        <div class="hero photo"><img src="assets/barney-gray-09.jpg" alt="" /></div>
+        <div class="bottom"><span>3 punkty kontroli</span><span class="swipe">przesuń →</span></div>
+      </section>
+
+      <section id="s2" class="slide light model clip" data-start="1" data-duration="1" data-track-index="0">
+        <div class="top"><span class="label">Uszka</span><span class="label">1/3</span></div>
+        <div class="photo"><img src="assets/barney-gray-11.jpg" alt="" /></div>
+        <h1>Uszka: obwąchane.</h1>
+        <p>Drewniane uszka po bokach, w kształcie domku. Jak cały Barney.</p>
+      </section>
+
+      <section id="s3" class="slide light model clip" data-start="2" data-duration="1" data-track-index="0">
+        <div class="top"><span class="label">Nóżki</span><span class="label">2/3</span></div>
+        <div class="photo"><img src="assets/barney-gray-02.jpg" alt="" /></div>
+        <h1>Nóżki: sprawdzone.</h1>
+        <p>Małe nóżki z litego drewna. Domek stoi lekko nad podłogą, lokator ponad wszystkim.</p>
+      </section>
+
+      <section id="s4" class="slide light model clip" data-start="3" data-duration="1" data-track-index="0">
+        <div class="top"><span class="label">Front</span><span class="label">3/3</span></div>
+        <div class="photo"><img src="assets/barney-gray-08.jpg" alt="" /></div>
+        <h1>Front: zdejmowany.</h1>
+        <p>Łatwy dostęp do wnętrza przy sprzątaniu. Lokator nie musi się wyprowadzać.</p>
+      </section>
+
+      <section id="s5" class="slide dark clip" data-start="4" data-duration="1" data-track-index="0">
+        <div class="top"><span class="wordmark">whimsy .</span><span class="label">whimsyshelters.pl</span></div>
+        <h1>Ocena końcowa:<br />drzemka zatwierdzona.</h1>
+        <ul>
+          <li>Lite drewno dębowe lub jesionowe</li>
+          <li>Gruby, wyciszający filc</li>
+          <li>Ręcznie, na zamówienie, w Polsce</li>
+          <li>Przyjeżdża w całości</li>
+        </ul>
+        <p class="ask">Co sprawdziłby Twój kot jako pierwsze? <strong>Uszka, nóżki czy front?</strong></p>
+      </section>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
