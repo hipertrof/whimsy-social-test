@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Gloock"; src: url("fonts/Gloock-Regular.ttf"); }
+      @font-face { font-family: "Lato"; src: url("fonts/Lato-Regular.ttf"); font-weight: 400; }
+      @font-face { font-family: "Lato"; src: url("fonts/Lato-Bold.ttf"); font-weight: 700; }
+      @font-face { font-family: "Quicksand"; src: url("fonts/Quicksand-VF.ttf"); font-weight: 300 700; }
+      :root {
+        --midnight: #0b1726;
+        --slate: #2a3e59;
+        --felt: #bfbfba;
+        --ash: #d9c49c;
+        --oak: #a6845b;
+        --paper: #f2efe8;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--midnight); }
+      #root { position: relative; width: 100%; height: 100%; }
+      .scene { position: absolute; inset: 0; overflow: hidden; font-family: "Lato", sans-serif; }
+      .dark { background: var(--midnight); color: var(--paper); }
+      .light { background: var(--felt); color: var(--midnight); }
+      .pad { position: absolute; left: 84px; right: 84px; }
+      h1 { font-family: "Gloock", serif; font-weight: 400; line-height: 1.05; letter-spacing: -0.015em; }
+      .mask { display: block; overflow: hidden; padding-bottom: 10px; }
+      .line { display: block; }
+      .label { font-family: "Quicksand", sans-serif; font-weight: 600; font-size: 30px; letter-spacing: 0.18em; text-transform: uppercase; }
+      .dark .label { color: var(--ash); }
+      .light .label { color: var(--slate); }
+      .photo { position: absolute; overflow: hidden; }
+      .photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+      /* 1 — hook (Reels UI covers roughly the top 250 px and bottom 400 px) */
+      #r1 h1 { top: 270px; font-size: 84px; }
+      #r1 .photo { left: 0; right: 0; top: 660px; height: 1040px; }
+      #r1-img { transform-origin: 30% 55%; }
+
+      /* 2 — three models */
+      .model .photo { left: 84px; right: 84px; top: 380px; height: 820px; border-radius: 32px; background: #fff; }
+      .model .label { top: 290px; }
+      .model h1 { top: 1235px; font-size: 84px; }
+      .model .tagline { top: 1445px; font-size: 40px; color: var(--slate); }
+
+      /* 3 — interior */
+      #r3 .photo { left: 0; right: 0; top: 280px; height: 1080px; }
+      #r3 h1 { top: 1400px; font-size: 64px; }
+
+      /* 4 — end card */
+      #r4 .wordmark { top: 640px; text-align: center; font-family: "Gloock", serif; font-size: 170px; }
+      #r4 .sub { top: 900px; font-family: "Gloock", serif; font-size: 56px; text-align: center; font-size: 42px; color: #d6d3cc; }
+      #r4 .rule { top: 1020px; left: 490px; right: 490px; height: 3px; background: var(--oak); }
+      #r4 .models { top: 1070px; text-align: center; }
+      #r4 .url { top: 1140px; text-align: center; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="20" data-width="1080" data-height="1920">
+
+      <!-- Timing (MEMORY.md): each scene stays 3 s + 0.3 s per word after its text is fully in.
+           r1: 6 words, in by 1.2 s -> 6.0 s. r2: 13 words, in by 1.2 s -> 8.1 s. r4: 6 words, in by 1.1 s -> 5.9 s. -->
+      <section id="r1" class="scene dark clip" data-start="0" data-duration="6" data-track-index="0">
+        <div class="photo"><img id="r1-img" src="assets/tivi-blue-03.png" alt="" /></div>
+        <h1 class="pad">
+          <span class="mask"><span id="r1-l1" class="line">Miał spać w środku.</span></span>
+          <span class="mask"><span id="r1-l2" class="line" style="color: var(--ash)">Wybrał dach.</span></span>
+        </h1>
+      </section>
+
+      <section id="r2" class="scene light model clip" data-start="6" data-duration="8.1" data-track-index="0">
+        <div id="r2-label" class="pad label">Tivi · gruby filc</div>
+        <div id="r2-photo" class="photo"><img src="assets/tivi-blue-11.jpg" alt="" /></div>
+        <h1 class="pad"><span class="mask"><span id="r2-h" class="line">W środku<br />i na zewnątrz.</span></span></h1>
+        <div id="r2-t" class="pad tagline">Wyciszający. Kot testuje obie strony.</div>
+      </section>
+
+      <section id="r4" class="scene dark clip" data-start="14.1" data-duration="5.9" data-track-index="0">
+        <div id="r4-mark" class="pad wordmark">whimsy .</div>
+        <div id="r4-sub" class="pad sub">Tivi. Trochę retro, trochę wow.</div>
+        <div id="r4-rule" class="pad rule"></div>
+      </section>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const rise = (sel, t, d = 0.7) => tl.fromTo(sel, { yPercent: 105 }, { yPercent: 0, duration: d, ease: "power3.out" }, t);
+      const fade = (sel, t, y = 20) => tl.fromTo(sel, { opacity: 0, y }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, t);
+
+      // 1 — hook: slow push-in towards the cat on the roof
+      tl.fromTo("#r1-img", { scale: 1.0 }, { scale: 1.15, duration: 6, ease: "none" }, 0);
+      rise("#r1-l1", 0.15);
+      rise("#r1-l2", 0.5);
+
+      // 2 — felt detail: card slides in, headline rises, line fades in
+      tl.fromTo("#r2-photo", { x: 120, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: "power3.out" }, 6);
+      tl.fromTo("#r2-photo img", { scale: 1.0 }, { scale: 1.06, duration: 8.1, ease: "none" }, 6);
+      fade("#r2-label", 6.1);
+      rise("#r2-h", 6.15);
+      fade("#r2-t", 6.6);
+
+      // 4 — end card
+      fade("#r4-mark", 14.25, 30);
+      fade("#r4-sub", 14.6);
+      tl.fromTo("#r4-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power2.out" }, 14.8);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
