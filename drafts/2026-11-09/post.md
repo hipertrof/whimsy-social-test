@@ -10,7 +10,7 @@ Każde usłojenie inne. Najładniejsze ma oczywiście kot.
 
 Przód i tył Tivi powstają z litego drewna dębowego lub jesionowego, więc żaden egzemplarz nie wygląda dokładnie tak samo. Słoje układają się po swojemu, a lokator i tak jest przekonany, że jemu trafiły się najlepsze.
 
-Dąb jest cieplejszy, jesion jaśniejszy. Bryłę otula gruby, wyciszający filc – szary albo granatowy – a całość stoi na małych drewnianych nóżkach. Zaokrąglony kształt i coś znajomego w układzie frontu dobrze czują się w salonie w stylu mid-century i we współczesnym wnętrzu.
+Bryłę otula gruby, wyciszający filc – szary albo granatowy – a całość stoi na małych drewnianych nóżkach. Zaokrąglony kształt i coś znajomego w układzie frontu dobrze czują się w salonie w stylu mid-century i we współczesnym wnętrzu.
 
 Ręcznie robiony na zamówienie w Polsce. Przyjeżdża w całości.
 
