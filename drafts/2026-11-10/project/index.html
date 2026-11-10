@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1350" />
+    <script src="gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Gloock"; src: url("fonts/Gloock-Regular.ttf"); }
+      @font-face { font-family: "Lato"; src: url("fonts/Lato-Regular.ttf"); font-weight: 400; }
+      @font-face { font-family: "Lato"; src: url("fonts/Lato-Bold.ttf"); font-weight: 700; }
+      @font-face { font-family: "Quicksand"; src: url("fonts/Quicksand-VF.ttf"); font-weight: 300 700; }
+      :root {
+        --midnight: #0b1726;
+        --slate: #2a3e59;
+        --felt: #bfbfba;
+        --ash: #d9c49c;
+        --oak: #a6845b;
+        --paper: #f2efe8;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1350px; overflow: hidden; background: var(--midnight); }
+      #root { position: relative; width: 100%; height: 100%; }
+      .slide { position: absolute; inset: 0; overflow: hidden; font-family: "Lato", sans-serif; }
+      .light { background: var(--felt); color: var(--midnight); }
+      .dark { background: var(--midnight); color: var(--paper); }
+      .pad { position: absolute; left: 84px; right: 84px; }
+      .wordmark { font-family: "Gloock", serif; font-size: 44px; }
+      .label { font-family: "Quicksand", sans-serif; font-weight: 600; font-size: 26px; letter-spacing: 0.18em; text-transform: uppercase; }
+      .dark .label { color: var(--ash); }
+      .light .label { color: var(--slate); }
+      .top { top: 84px; display: flex; justify-content: space-between; align-items: baseline; }
+      h1 { font-family: "Gloock", serif; font-weight: 400; line-height: 1.05; letter-spacing: -0.015em; }
+      p { font-size: 36px; line-height: 1.45; }
+      .line { display: block; }
+      .mask { overflow: hidden; display: block; padding-bottom: 8px; }
+      .photo { position: absolute; overflow: hidden; }
+      .photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+      /* 1 — hook */
+      #a1 h1 { top: 200px; font-size: 72px; }
+      #a1 .accent { color: var(--slate); }
+      #a1 .photo { left: 84px; right: 84px; bottom: 150px; height: 620px; border-radius: 28px; background: #fff; }
+      #a1 .swipe { bottom: 72px; text-align: right; font-family: "Quicksand", sans-serif; font-weight: 600; font-size: 28px; color: var(--slate); letter-spacing: 0.08em; }
+
+      /* 2, 3 — detail close-ups */
+      .detail .photo { left: 0; right: 0; top: 0; height: 880px; }
+      .detail .shade { position: absolute; left: 0; right: 0; top: 640px; height: 240px; background: linear-gradient(to bottom, rgba(11,23,38,0), var(--midnight)); }
+      .detail .text { top: 900px; display: flex; flex-direction: column; gap: 22px; }
+      .detail h1 { font-size: 76px; }
+      .detail p { color: #d6d3cc; }
+      .detail .tag { top: 84px; text-align: right; }
+      .detail .tag span { background: rgba(11,23,38,0.72); color: var(--ash); padding: 12px 20px; border-radius: 40px; }
+
+      /* 4 — close */
+      #a4 .photo { left: 84px; right: 84px; top: 190px; height: 560px; border-radius: 28px; }
+      #a4 h1 { top: 790px; font-size: 88px; }
+      #a4 p { top: 1010px; color: #d6d3cc; }
+      #a4 .foot { bottom: 84px; display: flex; justify-content: space-between; align-items: baseline; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="48" data-width="1080" data-height="1350">
+
+      <section id="a1" class="slide light clip" data-start="0" data-duration="12" data-track-index="0">
+        <div class="pad top"><span class="wordmark">whimsy .</span><span class="label">Barney</span></div>
+        <h1 class="pad">
+          <span class="mask"><span id="a1-l1" class="line">Gabinet.</span></span>
+          <span class="mask"><span id="a1-l2" class="line accent">Proszę nie przeszkadzać.</span></span>
+        </h1>
+        <div id="a1-photo" class="photo"><img id="a1-img" src="assets/barney-blue-03.png" alt="" /></div>
+        <div id="a1-swipe" class="pad swipe">przesuń →</div>
+      </section>
+
+      <section id="a2" class="slide dark detail clip" data-start="12" data-duration="12" data-track-index="0">
+        <div class="photo"><img id="a2-img" src="assets/barney-blue-06.jpg" alt="" /></div>
+        <div class="shade"></div>
+        <div class="pad tag label"><span>Barney · jesion</span></div>
+        <div class="pad text">
+          <div id="a2-label" class="label">Wejście 35 × 22 cm</div>
+          <h1><span class="mask"><span id="a2-h" class="line">Drzwi zawsze otwarte.</span></span></h1>
+          <p id="a2-p">Wejście w kształcie domku. Godziny przyjęć ustala lokator.</p>
+        </div>
+      </section>
+
+      <section id="a3" class="slide dark detail clip" data-start="24" data-duration="12" data-track-index="0">
+        <div class="photo"><img id="a3-img" src="assets/barney-blue-15.jpg" alt="" /></div>
+        <div class="shade"></div>
+        <div class="pad tag label"><span>Filc · granatowy</span></div>
+        <div class="pad text">
+          <div id="a3-label" class="label">Gruby, wyciszający filc</div>
+          <h1><span class="mask"><span id="a3-h" class="line">Cisza w gabinecie.</span></span></h1>
+          <p id="a3-p">Filc tłumi dźwięki salonu. Drzemek w gabinecie się nie przerywa. Nigdy.</p>
+        </div>
+      </section>
+
+      <section id="a4" class="slide dark clip" data-start="36" data-duration="12" data-track-index="0">
+        <div class="pad top"><span class="wordmark">whimsy .</span><span class="label">Ręcznie w Polsce</span></div>
+        <div id="a4-photo" class="photo"><img id="a4-img" src="assets/barney-blue-oak-low-02-side.jpg" alt="" /></div>
+        <h1 class="pad"><span class="mask"><span id="a4-h" class="line">Gabinet</span></span><span class="mask"><span id="a4-h2" class="line">z widokiem na salon.</span></span></h1>
+        <p id="a4-p" class="pad">Barney. Nowoczesna prostota, która otula ciszą.</p>
+        <div id="a4-foot" class="pad foot"><span class="label">whimsyshelters.pl</span><span class="label">Barney · Tivi · Frodo</span></div>
+      </section>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const rise = (sel, t) => tl.fromTo(sel, { yPercent: 105 }, { yPercent: 0, duration: 0.7, ease: "power3.out" }, t);
+      const fade = (sel, t, y = 24) => tl.fromTo(sel, { opacity: 0, y }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, t);
+
+      // Each slide is 12 s; all text is in by ~1.6 s, leaving ~10.4 s of reading time
+      // (MEMORY.md: 3 s + 0.3 s per word; the longest slide has 18 words = 8.4 s).
+
+      // 1 — hook
+      rise("#a1-l1", 0.2);
+      rise("#a1-l2", 0.8);
+      tl.fromTo("#a1-photo", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 1.0, ease: "power3.out" }, 0.4);
+      tl.fromTo("#a1-img", { scale: 1.08 }, { scale: 1, duration: 11.6, ease: "none" }, 0.4);
+      fade("#a1-swipe", 1.0, 0);
+
+      // 2 — entrance
+      tl.fromTo("#a2-img", { scale: 1.0 }, { scale: 1.12, duration: 12, ease: "none" }, 12);
+      fade("#a2-label", 12.2);
+      rise("#a2-h", 12.4);
+      fade("#a2-p", 12.9);
+
+      // 3 — felt
+      tl.fromTo("#a3-img", { scale: 1.12 }, { scale: 1.0, duration: 12, ease: "none" }, 24);
+      fade("#a3-label", 24.2);
+      rise("#a3-h", 24.4);
+      fade("#a3-p", 24.9);
+
+      // 4 — close
+      tl.fromTo("#a4-photo", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" }, 36.1);
+      tl.fromTo("#a4-img", { scale: 1.1 }, { scale: 1, duration: 11.9, ease: "none" }, 36.1);
+      rise("#a4-h", 36.4);
+      rise("#a4-h2", 36.7);
+      fade("#a4-p", 37.2);
+      fade("#a4-foot", 37.3, 0);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
