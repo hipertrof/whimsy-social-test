@@ -12,7 +12,7 @@ Last synced from the master: 2026-10-29.
 | What we sell | Handmade designer pet houses: distinctive shapes in solid wood, wrapped in thick felt inside and out |
 | Models | Barney, Tivi, Frodo, each in Gray or Blue |
 | Made in | Poland |
-| Website | https://whimsyshelters.pl (Shopify, Polish) |
+| Website | https://whimsyshelters.com (Shopify; Polish at the root, German at /de, English at /en; .pl and .de redirect here) |
 | Instagram | https://www.instagram.com/whimsyshelters/ |
 | Languages | Polish (original), English, German |
 | Main line | "Dla zwierząt. Dla domów. Dla tych, którzy widzą różnicę." / "For pets. For homes. For those who see the difference." |
