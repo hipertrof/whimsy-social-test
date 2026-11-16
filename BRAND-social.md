@@ -155,10 +155,10 @@ Curated from Drive. Use these as tone references and reuse them freely.
 ## 9. Visual identity
 
 **Fonts**
-- **Gloock** for headlines and large display text (social post headlines, hero titles). This is the only display font. It's a high-contrast serif chosen to keep the brand upscale while the copy stays playful; it stands in for Lovelace, which isn't on Google Fonts. **In Canva, use Lovelace Bold instead** (it's in Canva's library and looks almost identical); Gloock everywhere else. Use it large only: below roughly 24 px the thin strokes break up.
+- **Gloock** for headlines and large display text (social post headlines, hero titles). This is the only display font. It's a high-contrast serif chosen to keep the brand upscale while the copy stays playful. Use Gloock everywhere, Canva included (upload it as a brand font); Lovelace is retired so we don't depend on Canva. Use it large only: below roughly 24 px the thin strokes break up.
 - **Quicksand** for small accents, labels and buttons (e.g. "premium paw shelters" taglines). Not for long body text.
 - **Lato** for body copy.
-- **Logo wordmark:** "whimsy ." is set in Lovelace Bold (built in Canva). On the website, where Lovelace isn't available, use the logo image files, never live text.
+- **Logo wordmark:** "whimsy ." is set in **Gloock**, with the tagline "premium paw shelters" underneath in **Quicksand** Medium, widely letter-spaced. The space before the dot is deliberate: keep it, never "whimsy." (updated 2026-11-16; replaces the old Canva logo). Prefer the logo image files over retyping it.
 - League Spartan is retired. Don't use it anywhere.
 - Gloock, Quicksand and Lato are free on Google Fonts and support Polish characters.
 - Older Canva posts still use the previous fonts. Leave them until they're redone.
@@ -175,7 +175,7 @@ Curated from Drive. Use these as tone references and reuse them freely.
 
 The palette is literally the product: two felt colours and two woods. Keep it that way.
 
-**Logo:** the "whimsy ." wordmark. The logo files aren't in this repo yet; until they are, set the wordmark as live text in Gloock.
+**Logo:** the "whimsy ." wordmark. Logo files are in `assets/logo/` in this repo; if you must set it as live text, use Gloock for "whimsy ." and Quicksand for the tagline.
 
 ## 10. Photo and AI visual direction
 
@@ -195,7 +195,7 @@ The palette is literally the product: two felt colours and two woods. Keep it th
 3. **Scale must be believable.** Every model is 45 cm tall and 50 cm wide, roughly knee height next to a sofa.
 4. **No cushions inside** unless we're advertising cushions. Otherwise it needs the disclaimer.
 5. **Pets:** realistic breeds that fit the size: cats, small dogs. Check paws, eyes and fur edges for AI artefacts.
-6. **No text baked into images.** Add copy afterwards in Gloock (Lovelace Bold in Canva) / Lato.
+6. **No text baked into images.** Add copy afterwards in Gloock / Lato.
 7. **Label AI-generated scenes internally**, and keep at least one real photo in every carousel or product gallery.
 
 **Prompt skeleton (image)**
