@@ -101,7 +101,7 @@ Compiled from the live site, the Drive product descriptions, the product photos 
 |---|---|---|---|
 | Price | 1 200 zł | 1 200 zł | 1 100 zł |
 | Character | Minimalist, modern classic | Retro, nostalgic | Playful, organic |
-| Silhouette | A "house" shape: pentagon with a pitched roof and softly rounded corners | Rounded-rectangle box with a nostalgic, retro feel. Internally it's inspired by an old TV set, but **copy never calls it a TV**; at most a gentle hint ("Trochę retro, trochę wow") | Oval / egg on its side |
+| Silhouette | A "house" shape: pentagon with a pitched roof and softly rounded corners | Rounded-rectangle box with a nostalgic, retro feel. Internally it's inspired by an old TV set, but **copy never calls it a TV**; at most a gentle hint ("Trochę retro, trochę wow") | Soft oval lying on its side. **Never compare it to an egg** or any other unattractive object, in words or visuals (owner, 2026-11-18) |
 | Front | One house-shaped entrance, 35 × 22 cm | One rounded-square "screen" entrance (22 cm high), plus two small square "knob" windows on the left and a vertical "speaker" slot on the right | **One** large round entrance (Ø 20 cm) plus two smaller round **windows** (portholes), upper right. Never describe it as three entrances |
 | Back (ventilation) | One small house-shaped window | Two small square windows | Two small round holes |
 | Side ears | House-shaped | Rounded rectangle | Round |
@@ -126,6 +126,7 @@ All three models share the same outer dimensions and weight, which is useful in 
 | Uniqueness | each piece has its own grain; made to order | "one of a kind" in a way that implies a different design per order |
 | Safety | pet-safe coatings, free of harmful substances | certifications we don't hold (e.g. "certified non-toxic") |
 | Comparisons | "unlike typical pet beds…" | named competitors or luxury brands |
+| Frodo's shape | owalny, miękka owalna bryła, obłe linie / soft oval, rounded | egg, „jajko”, „jajowaty”, „wysiadywać”, or any other unattractive object as a comparison, in copy or visuals |
 
 **Standard disclaimer** (final PL and EN wording as on the approved product pages; DE is in the Drive "marketing copy" sheet, tab *disclaimers*):
 - PL: Zdjęcia mają charakter poglądowy — każdy domek wykonywany jest z litego drewna, dzięki czemu każdy egzemplarz jest unikatowy pod względem usłojenia. Poduszki i legowiska mogą pojawiać się na niektórych zdjęciach jako element stylizacji i nie są częścią oferty. Pracujemy nad wprowadzeniem dopasowanych poduszek, które pięknie dopełnią nasze domki.
