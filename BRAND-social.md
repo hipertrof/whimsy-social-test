@@ -99,7 +99,7 @@ Compiled from the live site, the Drive product descriptions, the product photos 
 
 | | **Barney** | **Tivi** | **Frodo** |
 |---|---|---|---|
-| Price | 1 200 zł | 1 200 zł | 1 100 zł |
+| Price | 1 200 zł | 1 200 zł | 1 200 zł |
 | Character | Minimalist, modern classic | Retro, nostalgic | Playful, organic |
 | Silhouette | A "house" shape: pentagon with a pitched roof and softly rounded corners | Rounded-rectangle box with a nostalgic, retro feel. Internally it's inspired by an old TV set, but **copy never calls it a TV**; at most a gentle hint ("Trochę retro, trochę wow") | Soft oval lying on its side. **Never compare it to an egg** or any other unattractive object, in words or visuals (owner, 2026-11-18) |
 | Front | One house-shaped entrance, 35 × 22 cm | One rounded-square "screen" entrance (22 cm high), plus two small square "knob" windows on the left and a vertical "speaker" slot on the right | **One** large round entrance (Ø 20 cm) plus two smaller round **windows** (portholes), upper right. Never describe it as three entrances |
